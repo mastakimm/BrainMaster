@@ -1,0 +1,14 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block comp %}
+
+    <div class="flex flex-col gap-12">
+        <div>
+            FILTER
+        </div>
+        <div>
+            {{ render_chart(chart) }}
+        </div>
+    </div>
+
+{% endblock %}

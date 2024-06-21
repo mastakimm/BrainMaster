@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quizz | Categorie lists{% endblock %}
+
+{% block body %}
+    <div class="p-8">
+        <h1 class="text-3xl">Categories :</h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-8">
+            {% for categorie in categories %}
+                <div class="bg-gray-50 shadow-md p-8 rounded-md cursor-pointer hover:scale-105 duration-500"
+                     onclick="window.location.href='{{ path('app_categorie_show', {'id': categorie.id}) }}'">
+                    <p class="font-semibold">{{ categorie.name }}</p>
+                </div>
+            {% else %}
+                <div class="bg-gray-50 p-4 rounded-md">No records found</div>
+            {% endfor %}
+            {% if app.user %}
+                <a href="{{ path('app_quizz_new') }}" class=" border-2 border-blue-500 shadow-md p-8 rounded-md cursor-pointer hover:scale-105 duration-500 flex justify-center items-center">
+                    <p class="font-semibold">Add new quizz</p>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

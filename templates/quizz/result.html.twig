@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Résultat{% endblock %}
+
+{% block body %}
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <div class="flex justify-center items-center min-h-screen bg-gray-100 overflow-hidden">
+        <div class="bg-white p-32 rounded-lg shadow-lg text-center">
+            <h1 class="font-bold text-2xl mb-20">
+                Résultat
+            </h1>
+            <p class="text-lg mb-6">
+                Vous avez obtenu un score de {{ score }} sur {{ total }}
+            </p>
+            <a href="{{ path('app_quizz', {'id': id}) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Rejouer
+            </a>
+        </div>
+    </div>
+{% endblock %}

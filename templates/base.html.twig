@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Bienvenue!{% endblock %}</title>
+    {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {% endblock %}
+
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+</head>
+<body class="h-screen">
+    <header>
+        <nav class="bg-slate-100 flex justify-between p-6 pl-12 pr-12 sticky backdrop-blur lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent">
+            <div class="flex gap-12">
+                <a href="{{ path('app_welcome') }}" class="{% if currentRoute is defined and currentRoute == 'app_home' %}text-blue-500{% endif %}">Home</a>
+                <a href={{ path('app_categorie_index') }} class="{% if currentRoute is defined and currentRoute == 'app_categorie_index' %}text-blue-500{% endif %}">Quiz</a>
+                <a href="{{ path('app_history') }}" class="{% if currentRoute is defined and currentRoute == 'app_history' %}text-blue-500{% endif %}">History</a>
+            </div>
+
+            <div class="flex gap-12">
+                {% if app.user %}
+                    {% if app.user.getAsRoles('ROLE_ADMIN') %}
+                        <a href="{{ path('app_admin') }}" class="{% if currentRoute is defined and currentRoute == 'app_admin_users' or currentRoute is defined and currentRoute == 'app_admin_graph' %}text-blue-500{% endif %}">Admin</a>
+                    {% endif %}
+                    <a href="{{ path('app_user_show', { 'id': app.user.id }) }}" class="{% if currentRoute is defined and currentRoute == 'app_user_show' %}text-blue-500{% endif %}">{{ app.user.username|capitalize }}</a>
+                    <a href="{{ path('app_logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ path('app_register') }}" class="{% if currentRoute is defined and currentRoute == 'app_register' %}text-blue-500{% endif %}">Register</a>
+                    <a href="{{ path('app_login') }}" class="{% if currentRoute is defined and currentRoute == 'app_login' %}text-blue-500{% endif %}">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+
+    {% block javascripts %}
+                {{ encore_entry_script_tags('app') }}
+        <script src="{{ asset('js/app.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

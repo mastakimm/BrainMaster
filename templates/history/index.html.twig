@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mx-auto p-8">
+
+        <div class="overflow-x-auto">
+            {% if names is empty %}
+                <div class="min-w-full bg-white">
+                    <p class="text-center">No quiz have been done for now</p>
+                </div>
+            {% else %}
+                <table class="min-w-full bg-white">
+                    <thead>
+                    <tr class="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left">Name</th>
+                        <th class="py-3 px-6 text-left">Score</th>
+                        <th class="py-3 px-6 text-left">Total</th>
+                        <th class="py-3 px-6 text-left">Date</th>
+                    </tr>
+                    </thead>
+                    <tbody class="text-gray-600 text-sm font-light">
+                    {% for i in 0..(names|length - 1) %}
+                        <tr class="border-b border-gray-200 hover:bg-gray-100">
+                            <td class="py-3 px-6 text-left whitespace-nowrap">{{ names[i]}}</td>
+                            <td class="py-3 px-6 text-left">{{ scores[i] }}</td>
+                            <td class="py-3 px-6 text-left">{{ totals[i] }}</td>
+                            <td class="py-3 px-6 text-left">{{ dates[i]|date("Y-m-d H:i") }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

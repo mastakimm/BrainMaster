@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz | AdminPanel{% endblock %}
+
+{% block body %}
+
+    <div class="p-8 flex">
+        <nav class="flex flex-col gap-4">
+            <a class="border rounded-md px-12 py-2 hover:bg-slate-200 hover:border-blue-500 transition duration-300 {% if currentRoute is defined and currentRoute == 'app_admin_users' %}bg-slate-200 border-blue-500{% endif %}" href="{{ path('app_admin_users') }}">Users</a>
+            <a class="border rounded-md px-12 py-2 hover:bg-slate-200 hover:border-blue-500 transition duration-300 {% if currentRoute is defined and currentRoute == 'app_admin_graph' %}bg-slate-200 border-blue-500{% endif %}" href="{{ path('app_admin_graph') }}">Graph</a>
+        </nav>
+
+        <div class="px-8 w-full">
+            {% block comp %}{% endblock %}
+        </div>
+    </div>
+
+{% endblock %}
