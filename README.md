@@ -23,6 +23,7 @@ your controller.json must look like this :
 }
 
 then run npm run watch
+
 symfony server:start
 
 You're all set!
