@@ -19,7 +19,7 @@ For educators and content creators, BrainMaster offers an admin panel to analyze
 
 ## If you want to try it on your own :
 
-## Initialize the Project :
+# Initialize the Project :
 
 ### 1. Install PHP Dependencies:
 composer install
@@ -38,7 +38,7 @@ nvm install 20.11.1
 ### 4. Verify controller.json Configuration:
 Ensure your controller.json looks like this:
 
-{
+```{
     "controllers": {
         "@symfony/ux-chartjs": {
             "chart": {
@@ -48,7 +48,7 @@ Ensure your controller.json looks like this:
         }
     },
     "entrypoints": []
-}
+}```
 
 ## Start the Servers:
 
