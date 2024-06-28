@@ -1,4 +1,5 @@
 # BrainMaster: Elevate Your Knowledge with Engaging Quizzes
+<br>
 
 ## Explore Various Categories
 
@@ -15,7 +16,8 @@ Access your quiz history to see past performances, retake quizzes, and aim for b
 ## Admin Panel for Data Analysis
 
 For educators and content creators, BrainMaster offers an admin panel to analyze quiz performance and user engagement, helping you improve your quizzes.
-
+<br>
+<br>
 
 # If you want to try it on your own :
 
