@@ -21,6 +21,11 @@ For educators and content creators, BrainMaster offers an admin panel to analyze
 
 # If you want to try it on your own :
 
+### Clone the project:
+
+With HTTPS: git clone 'https://github.com/mastakimm/BrainMaster.git'
+With SSH: git clone 'git@github.com:mastakimm/BrainMaster.git'
+
 ## Initialize the Project :
 
 ### 1. Install PHP Dependencies:
@@ -62,4 +67,7 @@ npm run watch
 ### 2. Start the Symfony (PHP) Server:
 symfony server:start
 
+<br>
+<br>
+<br>
 You're all set!
