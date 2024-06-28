@@ -38,7 +38,8 @@ nvm install 20.11.1
 ### 4. Verify controller.json Configuration:
 Ensure your controller.json looks like this:
 
-```{
+```
+{
     "controllers": {
         "@symfony/ux-chartjs": {
             "chart": {
@@ -48,7 +49,8 @@ Ensure your controller.json looks like this:
         }
     },
     "entrypoints": []
-}```
+}
+```
 
 ## Start the Servers:
 
