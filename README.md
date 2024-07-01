@@ -32,7 +32,7 @@ With SSH: git clone 'git@github.com:mastakimm/BrainMaster.git'
 composer install
 
 ### 2. Install Node.js Dependencies:
-This install Node dependencies
+npm i
 
 ### 3. Check Node Version:
 Ensure you are using Node.js version > 14:
@@ -67,7 +67,6 @@ npm run watch
 ### 2. Start the Symfony (PHP) Server:
 symfony server:start
 
-<br>
 <br>
 <br>
 You're all set!
